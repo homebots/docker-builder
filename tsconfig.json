@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  },
+  "exclude": ["./node_modules", "src/**/*.spec.ts", "jest.config.ts"]
+}

@@ -1,0 +1,25 @@
+name: 'Self-test'
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+
+      - name: 'Build image'
+        uses: ./
+        with:
+          root: test
+          image-name: node-test-image
+          extra-commands: |
+            ENTRYPOINT [ "node", "index.js" ]
+
+          targets: |
+            foo
+            bar
+            ./
+
+      - name: 'Check resulting image'
+        run: docker run --rm -it test

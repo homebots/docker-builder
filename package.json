@@ -1,0 +1,35 @@
+{
+  "name": "docker-builder",
+  "version": "1.0.0",
+  "description": "A template for Typescript projects",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "ncc build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/homebots/docker-builder.git"
+  },
+  "keywords": [
+    "homebots"
+  ],
+  "author": "Darlan Alves <me@darlanalv.es>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/homebots/docker-builder/issues"
+  },
+  "homepage": "https://github.com/homebots/docker-builder#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@vercel/ncc": "^0.29.0",
+    "jest": "^27.0.4",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.0.0"
+  },
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/exec": "^1.1.0",
+    "@actions/github": "^5.0.0"
+  }
+}

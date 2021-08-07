@@ -1,0 +1,32 @@
+name: 'Docker Builder'
+
+description: Builds and pushes a new Docker image with an app or microservice, using a prebuilt base image that runs from `/home/app`
+
+runs:
+  using: node12
+  main: dist/index.js
+
+inputs:
+  image-name:
+    description: 'The name of the Docker image to build'
+    required: true
+  root:
+    description: Path to root directory
+    default: '.'
+    required: false
+  service-config-path:
+    description: Path to service configuration file
+    required: false
+    default: 'service.json'
+  registry:
+    description: 'The registry to push the built image to'
+    default: 'd.homebots.io/v2'
+    required: false
+  targets:
+    description: 'A list of files and folders to include into the Docker image'
+    default: '.'
+    required: false
+  extra-commands:
+    description: 'A list of additional Docker commands to add into the Dockerfile before build'
+    default: ''
+    required: false
